@@ -15,30 +15,48 @@ public class Student {
 
     private String name;
 
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
+    @Transient
     private long age;
 
-    @OneToOne
+    @OneToOne(mappedBy = "student")
     private Address address;
+
+    @ManyToOne
+    private Klass klass;
+
+    @ElementCollection
+    @CollectionTable(name = "phoneNumber", joinColumns = @JoinColumn(name = "id", referencedColumnName = "id"))
+    @Column(name = "Phone")
+    private List<String> phoneNumbers = new ArrayList<>();
+
 
     public Student() {
     }
 
-    public Student(String name, String email, Date dateOfBirth) {
+    public Student(String name, String email, Date dateOfBirth, List<String> phoneNumbers) {
         this.name = name;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.age = (Calendar.getInstance().getTimeInMillis() - dateOfBirth.getTime())
                 / (60L * 60L * 1000L * 24L * 365L);
+        this.phoneNumbers = phoneNumbers;
     }
 
-    public Student(String name, String email, Date dateOfBirth, Address address) {
-        this(name, email, dateOfBirth);
+    public Student(String name, String email, Date dateOfBirth, Address address, List<String> phoneNumbers) {
+        this(name, email, dateOfBirth, phoneNumbers);
         this.address = address;
+    }
+
+    public Student(String name, String email, Date dateOfBirth, Address address, List<String> phoneNumbers, Klass klass) {
+        this(name, email, dateOfBirth, address, phoneNumbers);
+        this.klass = klass;
+
     }
 
     public long getId() {
@@ -81,8 +99,20 @@ public class Student {
         return address;
     }
 
+    public void setPhoneNumbers(List<String> phoneNumbers) { this.phoneNumbers = phoneNumbers; }
+
+    public List<String> getPhoneNumbers() { return phoneNumbers; }
+
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Klass getKlass() {
+        return klass;
+    }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
     }
 
     @Override

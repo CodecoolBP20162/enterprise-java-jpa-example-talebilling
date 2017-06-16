@@ -8,10 +8,18 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String country;
+
+    @Column(name = "Zip", length = 4)
     private String zipcode;
+
     private String city;
+
     private String addr;
+
+    @OneToOne
+    private Student student;
 
     public Address() {
     }
@@ -21,6 +29,11 @@ public class Address {
         this.zipcode = zipcode;
         this.city = city;
         this.addr = addr;
+    }
+
+    public Address(String country, String zipcode, String city, String addr, Student student) {
+        this(country, zipcode, city, addr);
+        this.student = student;
     }
 
     public long getId() {
@@ -62,6 +75,10 @@ public class Address {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+
+    public void setStudent(Student student) { this.student = student; }
+
+    public Student getStudent() { return student; }
 
     @Override
     public String toString() {
