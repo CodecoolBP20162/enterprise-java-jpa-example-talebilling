@@ -31,8 +31,7 @@ public class Student {
     private Klass klass;
 
     @ElementCollection
-    @CollectionTable(name = "phoneNumber", joinColumns = @JoinColumn(name = "id", referencedColumnName = "id"))
-    @Column(name = "Phone")
+    @CollectionTable(name = "Phone", joinColumns = @JoinColumn(name = "studentID"))
     private List<String> phoneNumbers = new ArrayList<>();
 
 

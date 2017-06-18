@@ -529,3 +529,51 @@ alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
 alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
 alter table phoneNumber add constraint FKgdfqpl2g31hcsqof0xv8piekb foreign key (id) references Student
 alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
+create table Address (id  bigserial not null, addr varchar(255), city varchar(255), country varchar(255), Zip varchar(4), student_id int8, primary key (id))
+create table Class (id  bigserial not null, location varchar(255), name varchar(255), primary key (id))
+create table phoneNumber (id int8 not null, Phone varchar(255))
+create table Student (id  bigserial not null, dateOfBirth date, email varchar(255) not null, name varchar(255), klass_id int8, primary key (id))
+alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
+alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
+alter table phoneNumber add constraint FKgdfqpl2g31hcsqof0xv8piekb foreign key (id) references Student
+alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
+create table Address (id  bigserial not null, addr varchar(255), city varchar(255), country varchar(255), Zip varchar(4), student_id int8, primary key (id))
+create table Class (id  bigserial not null, location varchar(255), name varchar(255), primary key (id))
+create table Phone (id int8 not null, phoneNumbers varchar(255))
+create table Student (id  bigserial not null, dateOfBirth date, email varchar(255) not null, name varchar(255), klass_id int8, primary key (id))
+alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
+alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
+alter table Phone add constraint FKq75fg5tl303bmf498n2n226pr foreign key (id) references Student
+alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
+create table Address (id  bigserial not null, addr varchar(255), city varchar(255), country varchar(255), Zip varchar(4), student_id int8, primary key (id))
+create table Class (id  bigserial not null, location varchar(255), name varchar(255), primary key (id))
+create table Phone (id int8 not null, phoneNumbers varchar(255))
+create table Student (id  bigserial not null, dateOfBirth date, email varchar(255) not null, name varchar(255), klass_id int8, primary key (id))
+alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
+alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
+alter table Phone add constraint FKq75fg5tl303bmf498n2n226pr foreign key (id) references Student
+alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
+create table Address (id  bigserial not null, addr varchar(255), city varchar(255), country varchar(255), Zip varchar(4), student_id int8, primary key (id))
+create table Class (id  bigserial not null, location varchar(255), name varchar(255), primary key (id))
+create table Phone (studentID int8 not null, phoneNumbers varchar(255))
+create table Student (id  bigserial not null, dateOfBirth date, email varchar(255) not null, name varchar(255), klass_id int8, primary key (id))
+alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
+alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
+alter table Phone add constraint FKg01m63eax514lraw9d8df4y5s foreign key (studentID) references Student
+alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
+create table Address (id  bigserial not null, addr varchar(255), city varchar(255), country varchar(255), Zip varchar(4), student_id int8, primary key (id))
+create table Class (id  bigserial not null, location varchar(255), name varchar(255), primary key (id))
+create table Phone (Student_id int8 not null, phoneNumbers varchar(255))
+create table Student (id  bigserial not null, dateOfBirth date, email varchar(255) not null, name varchar(255), klass_id int8, primary key (id))
+alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
+alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
+alter table Phone add constraint FK8p74wyfckl9p9p9d7h5y0a9ea foreign key (Student_id) references Student
+alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
+create table Address (id  bigserial not null, addr varchar(255), city varchar(255), country varchar(255), Zip varchar(4), student_id int8, primary key (id))
+create table Class (id  bigserial not null, location varchar(255), name varchar(255), primary key (id))
+create table Phone (studentID int8 not null, phoneNumbers varchar(255))
+create table Student (id  bigserial not null, dateOfBirth date, email varchar(255) not null, name varchar(255), klass_id int8, primary key (id))
+alter table Student add constraint UK_msrnvlmsye9t98fb3bvekffiq unique (email)
+alter table Address add constraint FK4q6j38bhikrv1pjbmde52gg7 foreign key (student_id) references Student
+alter table Phone add constraint FKg01m63eax514lraw9d8df4y5s foreign key (studentID) references Student
+alter table Student add constraint FK9vd8xbfa7svgpshok5mmdep1x foreign key (klass_id) references Class
